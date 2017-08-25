@@ -6,6 +6,7 @@ pipeline {
                 sh 'npm --version'
                 sh 'npm install'
             }
+        }
         stage('test') {
             steps {
                 sh './script/test'
