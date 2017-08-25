@@ -4,10 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 sh 'npm --version'
-            }
-            steps {
                 sh 'npm install'
             }
+        stage('test') {
             steps {
                 sh './script/test'
             }
