@@ -1,5 +1,9 @@
 pipeline {
     agent { docker 'node:6.3' }
+    environment {
+      'npm_config_cache=npm-cache'
+      'HOME=.'
+    }
     stages {
         stage('build') {
             steps {
