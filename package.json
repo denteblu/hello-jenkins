@@ -8,6 +8,10 @@
   },
   "devDependencies": {
     "mocha": "1.20.1",
+    "mocha-jenkins-reporter": "0.3.8",
     "supertest": "0.13.0"
+  },
+  "scripts": {
+    "test-jenkins": "JUNIT_REPORT_PATH=build/reports/report.xml mocha --colors --reporter mocha-jenkins-reporter"
   }
 }

@@ -13,8 +13,18 @@ pipeline {
         }
         stage('test') {
             steps {
-                sh './script/test'
+                sh 'npm run test-jenkins'
             }
+        }
+    }
+    post {
+        always {
+            junit 'build/reports/*.xml'
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+        }
+        failure {
+            echo 'I failed :('
         }
     }
 }
